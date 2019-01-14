@@ -7,41 +7,55 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class G99Class {
 	WebDriver driver;
+	String fireFoxDriver, FFDriverPath, appURL, appUname, appPwd,verifyLoginTitle,invalidCredentialsError;
 	
-@Parameters({"FireFoxDriver", "driverPath"})
-  @BeforeClass
-  public void initialiseBrowser(String firefoxDriver, String DriverPath) {
-	  System.setProperty(firefoxDriver, DriverPath);
+	@BeforeSuite
+	@Parameters({"FireFoxDriver", "driverPath", "AUTLink", "uname", "pwd"})
+	public void dataSource(String firefoxDriver, String DriverPath, String URL, String userName, String password) {
+		//These are from TestNG.XML file
+		fireFoxDriver=firefoxDriver;
+		FFDriverPath=DriverPath;
+		appURL=URL;
+		appUname=userName;
+		appPwd=password;
+		
+		//These are from Util.Java file
+		verifyLoginTitle=Util.verifyLoginTitle;
+		invalidCredentialsError=Util.invalidCredentialsError;
+	}
+	
+//@Parameters({"FireFoxDriver", "driverPath"})
+  @BeforeClass()
+  public void initialiseBrowser() {
+	  System.setProperty(fireFoxDriver, FFDriverPath);
 	  driver = new FirefoxDriver();
 	  driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); //wait for a certain amount of time before throwing an exception that it cannot find the element on the page
-	  //System.out.println("Data from Util File for trial: " + Util.MY_NAME);
   }
 	
-	@Parameters({"AUTLink", "uname", "pwd"})
+	//@Parameters({"AUTLink", "uname", "pwd"})
 	@Test
-	public void verifyLogin(String URL, String userName, String password) throws InterruptedException {
-		//verifyLoginTitle is derived from Util.java for practice purposes
-		driver.get(URL);
+	public void verifyLogin() throws InterruptedException {
+		driver.get(appURL);
 		loginPageObjects LPO = new loginPageObjects(driver);
-		LPO.enterUname(userName);
-		LPO.enterPassword(password);
+		LPO.enterUname(appUname);
+		LPO.enterPassword(appPwd);
 		LPO.clickLoginBtn();
-		//Assert.assertEquals(driver.getTitle(), Util.verifyLoginTitle);
-		//System.out.println(driver.switchTo().alert().getText());
+		//Assert.assertEquals(driver.getTitle(), Util.verifyLoginTitle);		
 		
-		
-		if(driver.getTitle().equals(Util.verifyLoginTitle)) {
+		if(driver.getTitle().equals(verifyLoginTitle)) {
 			System.out.println("Login Successful");
 		}
-		else if(driver.switchTo().alert().getText().contains(Util.invalidCredentialsError)) {
+	/*	else if(driver.switchTo().alert().getText().contains(invalidCredentialsError)) {
 			System.out.println("Invalid User ID or Password Entered");
 			driver.close();
-		}
+		}*/
 	}
 	
 	@AfterClass

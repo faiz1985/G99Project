@@ -7,7 +7,7 @@
 	<parameter name="AUTLink" value="http://www.demo.guru99.com/V4/"></parameter>
 	<parameter name="uname" value="mngr173496"></parameter>
 	<parameter name="pwd" value="ajEgyme"></parameter>
-	<!-- parameter name="verifyLoginTitle" value="Guru99 Bank Manager HomePage"></parameter -->
+	
 	
   <test thread-count="5" name="G99Test">
   	<classes>
