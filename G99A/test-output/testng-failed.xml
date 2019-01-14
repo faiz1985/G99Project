@@ -4,14 +4,14 @@
   <parameter name="uname" value="mngr173496"/>
   <parameter name="FireFoxDriver" value="webdriver.gecko.driver"/>
   <parameter name="driverPath" value="C:\\Users\\faiz1\\Desktop\\Selenium\\geckodriver.exe"/>
-  <parameter name="pwd" value="ajEgyme1"/>
+  <parameter name="pwd" value="ajEgyme"/>
   <parameter name="AUTLink" value="http://www.demo.guru99.com/V4/"/>
   <test thread-count="5" name="G99Test(failed)">
     <classes>
       <class name="G99.G99Class">
         <methods>
           <include name="initialiseBrowser"/>
-          <include name="verifyLogin" invocation-numbers="0"/>
+          <include name="verifyLogin"/>
           <include name="closeBrowser"/>
         </methods>
       </class> <!-- G99.G99Class -->
