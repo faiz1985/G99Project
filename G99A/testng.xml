@@ -5,11 +5,7 @@
 	<parameter name="browserDriver" value="webdriver.chrome.driver"></parameter>
 	<parameter name="firefoxDriverPath" value="C:\\Users\\faiz1\\Desktop\\Selenium\\geckodriver.exe"></parameter>
 	<parameter name="chromeDriverPath" value="C:\\Users\\ffarooq\\OneDrive - MetLife\\From Box\\Non Project\\Selenium\\chromedriver.exe"></parameter>
-	<parameter name="AUTLink" value="http://www.demo.guru99.com/V4/"></parameter>
-	<parameter name="uname" value="mngr173496"></parameter>
-	<parameter name="pwd" value="ajEgyme"></parameter>
-	
-	
+		
   <test thread-count="5" name="G99Test">
   	<classes>
   		<class name="G99.G99Class"/>

@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="G99Suite" duration-ms="15459" started-at="2019-01-14T19:01:47Z" finished-at="2019-01-14T19:02:03Z">
+  <suite name="G99Suite" duration-ms="11017" started-at="2019-01-14T19:24:08Z" finished-at="2019-01-14T19:24:19Z">
     <groups>
     </groups>
-    <test name="G99Test" duration-ms="15459" started-at="2019-01-14T19:01:47Z" finished-at="2019-01-14T19:02:03Z">
+    <test name="G99Test" duration-ms="11017" started-at="2019-01-14T19:24:08Z" finished-at="2019-01-14T19:24:19Z">
       <class name="G99.G99Class">
-        <test-method status="PASS" signature="dataSource(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:G99.G99Class@a67c67e]" name="dataSource" is-config="true" duration-ms="35" started-at="2019-01-14T19:01:47Z" finished-at="2019-01-14T19:01:47Z">
+        <test-method status="PASS" signature="dataSource(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:G99.G99Class@a67c67e]" name="dataSource" is-config="true" duration-ms="42" started-at="2019-01-14T19:24:08Z" finished-at="2019-01-14T19:24:08Z">
           <params>
             <param index="0">
               <value>
@@ -24,34 +24,19 @@
                 <![CDATA[C:\\Users\\ffarooq\\OneDrive - MetLife\\From Box\\Non Project\\Selenium\\chromedriver.exe]]>
               </value>
             </param>
-            <param index="3">
-              <value>
-                <![CDATA[http://www.demo.guru99.com/V4/]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[mngr173496]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[ajEgyme]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dataSource -->
-        <test-method status="PASS" signature="initialiseBrowser()[pri:0, instance:G99.G99Class@a67c67e]" name="initialiseBrowser" is-config="true" duration-ms="5175" started-at="2019-01-14T19:01:47Z" finished-at="2019-01-14T19:01:52Z">
+        <test-method status="PASS" signature="initialiseBrowser()[pri:0, instance:G99.G99Class@a67c67e]" name="initialiseBrowser" is-config="true" duration-ms="3808" started-at="2019-01-14T19:24:08Z" finished-at="2019-01-14T19:24:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialiseBrowser -->
-        <test-method status="PASS" signature="verifyLogin()[pri:0, instance:G99.G99Class@a67c67e]" name="verifyLogin" duration-ms="7792" started-at="2019-01-14T19:01:52Z" finished-at="2019-01-14T19:02:00Z">
+        <test-method status="PASS" signature="verifyLogin()[pri:0, instance:G99.G99Class@a67c67e]" name="verifyLogin" duration-ms="5891" started-at="2019-01-14T19:24:12Z" finished-at="2019-01-14T19:24:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLogin -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:G99.G99Class@a67c67e]" name="closeBrowser" is-config="true" duration-ms="2456" started-at="2019-01-14T19:02:00Z" finished-at="2019-01-14T19:02:03Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:G99.G99Class@a67c67e]" name="closeBrowser" is-config="true" duration-ms="1300" started-at="2019-01-14T19:24:18Z" finished-at="2019-01-14T19:24:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

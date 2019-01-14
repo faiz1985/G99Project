@@ -1,5 +1,9 @@
 package G99;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -16,21 +20,30 @@ public class G99Class {
 	String BrowserDriver, FireFoxDriverPath, ChromeDriverPath, appURL, appUname, appPwd, verifyLoginTitle, invalidCredentialsError, successfulLoginMsg;
 	
 	@BeforeSuite
-	@Parameters({"browserDriver", "firefoxDriverPath","chromeDriverPath", "AUTLink", "uname", "pwd"})
-	public void dataSource(String browserDriver, String firefoxDriverPath, String chromeDriverPath, String URL, String userName, String password) {
+	@Parameters({"browserDriver", "firefoxDriverPath","chromeDriverPath"})
+	public void dataSource(String browserDriver, String firefoxDriverPath, String chromeDriverPath) throws IOException {
+		
 		//These are from TestNG.XML file
 		BrowserDriver=browserDriver;
 		FireFoxDriverPath=firefoxDriverPath;
 		ChromeDriverPath=chromeDriverPath;
 		
-		appURL=URL;
-		appUname=userName;
-		appPwd=password;
+		//appURL=URL;
+		//appUname=userName;
+		//appPwd=password;
 		
 		//These are from Util.Java file
 		verifyLoginTitle=Util.verifyLoginTitle;
 		invalidCredentialsError=Util.invalidCredentialsError;
 		successfulLoginMsg=Util.successfulLoginMsg;
+		
+		//These are from config.properties file
+		FileInputStream fis = new FileInputStream("C:\\Users\\ffarooq\\git\\G99Project\\G99A\\config.properties");
+		Properties prop = new Properties();
+		prop.load(fis);
+		appURL=prop.getProperty("URL");
+		appUname=prop.getProperty("uname");
+		appPwd=prop.getProperty("pwd");
 	}
 	
 //@Parameters({"FireFoxDriver", "driverPath"})
