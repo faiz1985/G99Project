@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="G99Suite" duration-ms="12495" started-at="2019-01-14T15:46:15Z" finished-at="2019-01-14T15:46:28Z">
+  <suite name="G99Suite" duration-ms="15459" started-at="2019-01-14T19:01:47Z" finished-at="2019-01-14T19:02:03Z">
     <groups>
     </groups>
-    <test name="G99Test" duration-ms="12495" started-at="2019-01-14T15:46:15Z" finished-at="2019-01-14T15:46:28Z">
+    <test name="G99Test" duration-ms="15459" started-at="2019-01-14T19:01:47Z" finished-at="2019-01-14T19:02:03Z">
       <class name="G99.G99Class">
-        <test-method status="PASS" signature="dataSource(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:G99.G99Class@5e5792a0]" name="dataSource" is-config="true" duration-ms="14" started-at="2019-01-14T15:46:15Z" finished-at="2019-01-14T15:46:15Z">
+        <test-method status="PASS" signature="dataSource(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:G99.G99Class@a67c67e]" name="dataSource" is-config="true" duration-ms="35" started-at="2019-01-14T19:01:47Z" finished-at="2019-01-14T19:01:47Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[webdriver.gecko.driver]]>
+                <![CDATA[webdriver.chrome.driver]]>
               </value>
             </param>
             <param index="1">
@@ -21,15 +21,20 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[http://www.demo.guru99.com/V4/]]>
+                <![CDATA[C:\\Users\\ffarooq\\OneDrive - MetLife\\From Box\\Non Project\\Selenium\\chromedriver.exe]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[mngr173496]]>
+                <![CDATA[http://www.demo.guru99.com/V4/]]>
               </value>
             </param>
             <param index="4">
+              <value>
+                <![CDATA[mngr173496]]>
+              </value>
+            </param>
+            <param index="5">
               <value>
                 <![CDATA[ajEgyme]]>
               </value>
@@ -38,15 +43,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dataSource -->
-        <test-method status="PASS" signature="initialiseBrowser()[pri:0, instance:G99.G99Class@5e5792a0]" name="initialiseBrowser" is-config="true" duration-ms="5378" started-at="2019-01-14T15:46:15Z" finished-at="2019-01-14T15:46:21Z">
+        <test-method status="PASS" signature="initialiseBrowser()[pri:0, instance:G99.G99Class@a67c67e]" name="initialiseBrowser" is-config="true" duration-ms="5175" started-at="2019-01-14T19:01:47Z" finished-at="2019-01-14T19:01:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialiseBrowser -->
-        <test-method status="PASS" signature="verifyLogin()[pri:0, instance:G99.G99Class@5e5792a0]" name="verifyLogin" duration-ms="4096" started-at="2019-01-14T15:46:21Z" finished-at="2019-01-14T15:46:25Z">
+        <test-method status="PASS" signature="verifyLogin()[pri:0, instance:G99.G99Class@a67c67e]" name="verifyLogin" duration-ms="7792" started-at="2019-01-14T19:01:52Z" finished-at="2019-01-14T19:02:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLogin -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:G99.G99Class@5e5792a0]" name="closeBrowser" is-config="true" duration-ms="3007" started-at="2019-01-14T15:46:25Z" finished-at="2019-01-14T15:46:28Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:G99.G99Class@a67c67e]" name="closeBrowser" is-config="true" duration-ms="2456" started-at="2019-01-14T19:02:00Z" finished-at="2019-01-14T19:02:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

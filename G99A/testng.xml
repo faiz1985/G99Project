@@ -2,8 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="G99Suite">
 
-	<parameter name="FireFoxDriver" value="webdriver.gecko.driver"></parameter>
-	<parameter name="driverPath" value="C:\\Users\\faiz1\\Desktop\\Selenium\\geckodriver.exe"></parameter>
+	<parameter name="browserDriver" value="webdriver.chrome.driver"></parameter>
+	<parameter name="firefoxDriverPath" value="C:\\Users\\faiz1\\Desktop\\Selenium\\geckodriver.exe"></parameter>
+	<parameter name="chromeDriverPath" value="C:\\Users\\ffarooq\\OneDrive - MetLife\\From Box\\Non Project\\Selenium\\chromedriver.exe"></parameter>
 	<parameter name="AUTLink" value="http://www.demo.guru99.com/V4/"></parameter>
 	<parameter name="uname" value="mngr173496"></parameter>
 	<parameter name="pwd" value="ajEgyme"></parameter>

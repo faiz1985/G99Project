@@ -2,14 +2,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [G99Suite]">
   <parameter name="uname" value="mngr173496"/>
-  <parameter name="FireFoxDriver" value="webdriver.gecko.driver"/>
-  <parameter name="driverPath" value="C:\\Users\\faiz1\\Desktop\\Selenium\\geckodriver.exe"/>
+  <parameter name="firefoxDriverPath" value="C:\\Users\\faiz1\\Desktop\\Selenium\\geckodriver.exe"/>
   <parameter name="pwd" value="ajEgyme"/>
+  <parameter name="browserDriver" value="webdriver.chrome.driver"/>
+  <parameter name="chromeDriverPath" value="C:\\Users\\ffarooq\\OneDrive - MetLife\\From Box\\Non Project\\Selenium\\chromedriver.exe"/>
   <parameter name="AUTLink" value="http://www.demo.guru99.com/V4/"/>
   <test thread-count="5" name="G99Test(failed)">
     <classes>
       <class name="G99.G99Class">
         <methods>
+          <include name="dataSource"/>
           <include name="initialiseBrowser"/>
           <include name="verifyLogin"/>
           <include name="closeBrowser"/>

@@ -5,9 +5,10 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>G99N</name>
   <description>Guru99 Simple Project</description>
-  
+
  <dependencies>
-	
+
+  
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
 		    <groupId>org.seleniumhq.selenium</groupId>
