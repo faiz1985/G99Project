@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="G99Suite" duration-ms="11017" started-at="2019-01-14T19:24:08Z" finished-at="2019-01-14T19:24:19Z">
+  <suite name="G99Suite" duration-ms="10898" started-at="2019-01-15T21:52:43Z" finished-at="2019-01-15T21:52:54Z">
     <groups>
     </groups>
-    <test name="G99Test" duration-ms="11017" started-at="2019-01-14T19:24:08Z" finished-at="2019-01-14T19:24:19Z">
+    <test name="G99Test" duration-ms="10898" started-at="2019-01-15T21:52:43Z" finished-at="2019-01-15T21:52:54Z">
       <class name="G99.G99Class">
-        <test-method status="PASS" signature="dataSource(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:G99.G99Class@a67c67e]" name="dataSource" is-config="true" duration-ms="42" started-at="2019-01-14T19:24:08Z" finished-at="2019-01-14T19:24:08Z">
+        <test-method status="PASS" signature="dataSource(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:G99.G99Class@5383967b]" name="dataSource" is-config="true" duration-ms="282" started-at="2019-01-15T21:52:43Z" finished-at="2019-01-15T21:52:43Z">
           <params>
             <param index="0">
               <value>
@@ -28,15 +28,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dataSource -->
-        <test-method status="PASS" signature="initialiseBrowser()[pri:0, instance:G99.G99Class@a67c67e]" name="initialiseBrowser" is-config="true" duration-ms="3808" started-at="2019-01-14T19:24:08Z" finished-at="2019-01-14T19:24:12Z">
+        <test-method status="PASS" signature="initialiseBrowser()[pri:0, instance:G99.G99Class@5383967b]" name="initialiseBrowser" is-config="true" duration-ms="3809" started-at="2019-01-15T21:52:43Z" finished-at="2019-01-15T21:52:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialiseBrowser -->
-        <test-method status="PASS" signature="verifyLogin()[pri:0, instance:G99.G99Class@a67c67e]" name="verifyLogin" duration-ms="5891" started-at="2019-01-14T19:24:12Z" finished-at="2019-01-14T19:24:18Z">
+        <test-method status="PASS" signature="verifyLogin()[pri:0, instance:G99.G99Class@5383967b]" name="verifyLogin" duration-ms="5678" started-at="2019-01-15T21:52:47Z" finished-at="2019-01-15T21:52:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLogin -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:G99.G99Class@a67c67e]" name="closeBrowser" is-config="true" duration-ms="1300" started-at="2019-01-14T19:24:18Z" finished-at="2019-01-14T19:24:19Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:G99.G99Class@5383967b]" name="closeBrowser" is-config="true" duration-ms="1376" started-at="2019-01-15T21:52:53Z" finished-at="2019-01-15T21:52:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

@@ -1,7 +1,7 @@
 package G99;
 
+import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -15,35 +15,61 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.read.biff.BiffException;
+
+
 public class G99Class {
 	WebDriver driver;
 	String BrowserDriver, FireFoxDriverPath, ChromeDriverPath, appURL, appUname, appPwd, verifyLoginTitle, invalidCredentialsError, successfulLoginMsg;
 	
 	@BeforeSuite
 	@Parameters({"browserDriver", "firefoxDriverPath","chromeDriverPath"})
-	public void dataSource(String browserDriver, String firefoxDriverPath, String chromeDriverPath) throws IOException {
+	public void dataSource(String browserDriver, String firefoxDriverPath, String chromeDriverPath) throws IOException, BiffException {
 		
 		//These are from TestNG.XML file
 		BrowserDriver=browserDriver;
 		FireFoxDriverPath=firefoxDriverPath;
 		ChromeDriverPath=chromeDriverPath;
-		
-		//appURL=URL;
-		//appUname=userName;
-		//appPwd=password;
-		
+			
 		//These are from Util.Java file
 		verifyLoginTitle=Util.verifyLoginTitle;
 		invalidCredentialsError=Util.invalidCredentialsError;
 		successfulLoginMsg=Util.successfulLoginMsg;
 		
 		//These are from config.properties file
-		FileInputStream fis = new FileInputStream("C:\\Users\\ffarooq\\git\\G99Project\\G99A\\config.properties");
+		FileInputStream fis = new FileInputStream(Util.configProp);
 		Properties prop = new Properties();
 		prop.load(fis);
 		appURL=prop.getProperty("URL");
 		appUname=prop.getProperty("uname");
 		appPwd=prop.getProperty("pwd");
+		
+		//These are from an excel file - JXL will work only with .xls format; to use .xlsx format, work with POI library
+		Workbook xlWB = Workbook.getWorkbook(new File(Util.FILE_PATH));
+		Sheet xlSheet = xlWB.getSheet(Util.SHEET_NAME);
+		
+		int rowCount=xlSheet.getRows();
+		int colCount=xlSheet.getColumns();
+		
+		String inputData[][] = new String [rowCount][colCount];
+		
+		for(int i=0;i<rowCount;i++) {
+			for(int j=0;j<colCount;j++) {
+				jxl.Cell c = xlSheet.getCell(j, i);
+				inputData[i][j] = c.getContents();
+				//System.out.print(inputData[i][j] + "\t");
+			}
+			//System.out.println("\n");
+		}
+		xlWB.close();
+		
+		for(int i=0;i<inputData.length; i++) {
+			appUname=inputData[i][0];
+			appPwd=inputData[i][1];
+			//System.out.println("Username: " + unameExcel + ", Password: " + pwdExcel);
+		}
 	}
 	
 //@Parameters({"FireFoxDriver", "driverPath"})

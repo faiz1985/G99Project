@@ -124,5 +124,6 @@
 	<classpathentry kind="lib" path="C:/Users/ffarooq/OneDrive - MetLife/From Box/Non Project/Selenium/testNG Jars/snakeyaml-1.15.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ffarooq/OneDrive - MetLife/From Box/Non Project/Selenium/testNG Jars/testng-6.9.9.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ffarooq/OneDrive - MetLife/From Box/Non Project/Selenium/JARs/libs/guava-25.0-jre.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ffarooq/OneDrive - MetLife/From Box/Non Project/Selenium/jxl-2.6.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
