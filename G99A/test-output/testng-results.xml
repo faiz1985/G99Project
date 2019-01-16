@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="G99Suite" duration-ms="10898" started-at="2019-01-15T21:52:43Z" finished-at="2019-01-15T21:52:54Z">
+  <suite name="G99Suite" duration-ms="16189" started-at="2019-01-16T20:59:21Z" finished-at="2019-01-16T20:59:38Z">
     <groups>
     </groups>
-    <test name="G99Test" duration-ms="10898" started-at="2019-01-15T21:52:43Z" finished-at="2019-01-15T21:52:54Z">
+    <test name="G99Test" duration-ms="16189" started-at="2019-01-16T20:59:21Z" finished-at="2019-01-16T20:59:38Z">
       <class name="G99.G99Class">
-        <test-method status="PASS" signature="dataSource(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:G99.G99Class@5383967b]" name="dataSource" is-config="true" duration-ms="282" started-at="2019-01-15T21:52:43Z" finished-at="2019-01-15T21:52:43Z">
+        <test-method status="PASS" signature="dataSource(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:G99.G99Class@2286778]" name="dataSource" is-config="true" duration-ms="368" started-at="2019-01-16T20:59:21Z" finished-at="2019-01-16T20:59:21Z">
           <params>
             <param index="0">
               <value>
@@ -28,15 +28,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dataSource -->
-        <test-method status="PASS" signature="initialiseBrowser()[pri:0, instance:G99.G99Class@5383967b]" name="initialiseBrowser" is-config="true" duration-ms="3809" started-at="2019-01-15T21:52:43Z" finished-at="2019-01-15T21:52:47Z">
+        <test-method status="PASS" signature="initialiseBrowser()[pri:0, instance:G99.G99Class@2286778]" name="initialiseBrowser" is-config="true" duration-ms="4732" started-at="2019-01-16T20:59:21Z" finished-at="2019-01-16T20:59:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialiseBrowser -->
-        <test-method status="PASS" signature="verifyLogin()[pri:0, instance:G99.G99Class@5383967b]" name="verifyLogin" duration-ms="5678" started-at="2019-01-15T21:52:47Z" finished-at="2019-01-15T21:52:53Z">
+        <test-method status="PASS" signature="verifyLogin()[pri:1, instance:G99.G99Class@2286778]" name="verifyLogin" duration-ms="8899" started-at="2019-01-16T20:59:26Z" finished-at="2019-01-16T20:59:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLogin -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:G99.G99Class@5383967b]" name="closeBrowser" is-config="true" duration-ms="1376" started-at="2019-01-15T21:52:53Z" finished-at="2019-01-15T21:52:54Z">
+        <test-method status="PASS" signature="verifymanagerID()[pri:2, instance:G99.G99Class@2286778]" name="verifymanagerID" duration-ms="105" started-at="2019-01-16T20:59:35Z" finished-at="2019-01-16T20:59:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifymanagerID -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:G99.G99Class@2286778]" name="closeBrowser" is-config="true" duration-ms="2409" started-at="2019-01-16T20:59:35Z" finished-at="2019-01-16T20:59:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

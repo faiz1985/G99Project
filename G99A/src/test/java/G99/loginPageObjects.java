@@ -17,6 +17,9 @@ public class loginPageObjects {
 	@FindBy(name="btnLogin")
 	WebElement loginBtn;
 	
+	@FindBy(xpath="/html/body/table/tbody/tr/td/table/tbody/tr[3]/td")
+	WebElement managerIDTxt;
+	
 	public loginPageObjects(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
@@ -32,5 +35,9 @@ public class loginPageObjects {
 	
 	public void clickLoginBtn() {
 		loginBtn.click();
+	}
+	
+	public String verifyMgrID() {
+		return managerIDTxt.getText();
 	}
 }

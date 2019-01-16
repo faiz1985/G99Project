@@ -6,9 +6,12 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
@@ -22,6 +25,7 @@ import jxl.read.biff.BiffException;
 
 public class G99Class {
 	WebDriver driver;
+	loginPageObjects LPO;
 	String BrowserDriver, FireFoxDriverPath, ChromeDriverPath, appURL, appUname, appPwd, verifyLoginTitle, invalidCredentialsError, successfulLoginMsg;
 	
 	@BeforeSuite
@@ -43,8 +47,8 @@ public class G99Class {
 		Properties prop = new Properties();
 		prop.load(fis);
 		appURL=prop.getProperty("URL");
-		appUname=prop.getProperty("uname");
-		appPwd=prop.getProperty("pwd");
+		//appUname=prop.getProperty("uname");
+		//appPwd=prop.getProperty("pwd");
 		
 		//These are from an excel file - JXL will work only with .xls format; to use .xlsx format, work with POI library
 		Workbook xlWB = Workbook.getWorkbook(new File(Util.FILE_PATH));
@@ -59,16 +63,16 @@ public class G99Class {
 			for(int j=0;j<colCount;j++) {
 				jxl.Cell c = xlSheet.getCell(j, i);
 				inputData[i][j] = c.getContents();
-				//System.out.print(inputData[i][j] + "\t");
+				
 			}
-			//System.out.println("\n");
+			//
 		}
 		xlWB.close();
 		
 		for(int i=0;i<inputData.length; i++) {
 			appUname=inputData[i][0];
 			appPwd=inputData[i][1];
-			//System.out.println("Username: " + unameExcel + ", Password: " + pwdExcel);
+			
 		}
 	}
 	
@@ -89,22 +93,51 @@ public class G99Class {
   }
 	
 	//@Parameters({"AUTLink", "uname", "pwd"})
-	@Test
+	@Test(priority=1)
 	public void verifyLogin() {
 		driver.get(appURL);
-		loginPageObjects LPO = new loginPageObjects(driver);
+		LPO = new loginPageObjects(driver);
+		
 		LPO.enterUname(appUname);
 		LPO.enterPassword(appPwd);
 		LPO.clickLoginBtn();
-		//Assert.assertEquals(driver.getTitle(), Util.verifyLoginTitle);		
+
+        /* Determine Pass Fail Status of the Script
+         * If login credentials are correct,  Alert(Pop up) is NOT present. An Exception is thrown and code in catch block is executed	
+         * If login credentials are invalid, Alert is present. Code in try block is executed 	    
+         */
 		
-		if(driver.getTitle().equals(verifyLoginTitle)) {
-			System.out.println(successfulLoginMsg);
+		try{ 
+		    
+	       	Alert alt = driver.switchTo().alert();
+			String actualBoxtitle = alt.getText(); // get content of the Alter Message
+			alt.accept();
+			/*if (actualBoxtitle.contains(Util.invalidCredentialsError)) { // Compare Error Text with Expected Error Value
+				System.out.println(Util.invalidCredentialsError);
+			}
+			*/
+			Assert.assertEquals(actualBoxtitle, Util.invalidCredentialsError);
+		}    
+	    catch (NoAlertPresentException Ex){ 
+	    	String actualTitle = driver.getTitle();
+			// On Successful login compare Actual Page Title with Expected Title
+			/*if (actualTitle.contains(verifyLoginTitle)) {
+				System.out.println(successfulLoginMsg);
+			}
+			*/
+			Assert.assertEquals(actualTitle, verifyLoginTitle);
+        } 
+	}
+	
+	@Test(priority=2)
+	public void verifymanagerID() {
+		String managerIDTxt = LPO.verifyMgrID();
+		if(managerIDTxt.contains(appUname)) {
+			System.out.println("Manager ID " + appUname + " is present in the login message");
 		}
-	/*	else if(driver.switchTo().alert().getText().contains(invalidCredentialsError)) {
-			System.out.println("Invalid User ID or Password Entered");
-			driver.close();
-		}*/
+		else {
+			System.out.println("Manager ID " + appUname + " is not present in the login message");
+		}
 	}
 	
 	@AfterClass
